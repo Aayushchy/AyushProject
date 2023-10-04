@@ -3,6 +3,7 @@ package com.esewa.usermanagement.controller;
 import com.esewa.usermanagement.dto.JwtResponse;
 import com.esewa.usermanagement.dto.LoginDto;
 import com.esewa.usermanagement.service.impl.LoginServiceImpl;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,8 +25,9 @@ public class LoginController {
     private String jwtKey;
 
     @GetMapping
-    public void homePage(){
-        log.info("In Homepage. Database Password: {}. Jwt Key: {}", databasePassword, jwtKey);
+    public void homePage(HttpServletRequest request){
+        String servletPath = request.getServletPath();
+        log.info("In Homepage. Servlet path: {}. Jwt Key: {}", servletPath, jwtKey);
     }
 
     @PostMapping("/login")
