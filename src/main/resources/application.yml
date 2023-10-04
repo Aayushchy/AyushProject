@@ -47,4 +47,9 @@ flags:
 emailLogChar:
   maxLength: 255
 
-
+external:
+  property:
+    file:
+      path: file:/C:/Users/ThinkPad/Documents/Property_File/encryption/src/main/resources/external_application.properties
+    encryption:
+      key: secret_key

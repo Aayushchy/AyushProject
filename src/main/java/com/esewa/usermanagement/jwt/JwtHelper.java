@@ -24,8 +24,6 @@ import java.util.function.Function;
 public class JwtHelper {
 
     private final JWTConfigurationProperties jwtConfigProperties;
-    @Value("$")
-    private String secretKey;
 
     public String generateToken(String username) {
         Map<String, Object> claims = new HashMap<>();
